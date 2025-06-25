@@ -23,3 +23,9 @@ Ten projekt klasyfikuje rasę psa na podstawie jego cech (wzrost, długość ży
 pip install -r requirements.txt
 python train_model.py
 streamlit run app.py
+```
+### LUB
+# Kontener
+```bash
+docker compose up 
+```

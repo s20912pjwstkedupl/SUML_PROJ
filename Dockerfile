@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt
-
+RUN python train_model.py
 EXPOSE 8501
 
 CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
