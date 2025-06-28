@@ -17,11 +17,15 @@ jobs:
         with:
           python-version: 'pypy3.10'
 
+        name: Install deps
       - run: |
           rm -rf model/model.pkl && \
-          pip install --no-cache-dir -r requirements.txt && \
-          python train_model.py
+          pip install -r requirements.txt
 
+        name: Train
+      - run: python train_model.py
+
+        name: Publish model
       - run: | 
           git config --global user.name "${{ env.USER_NAME }}" && \
           git config --global user.email "${{ env.USER_EMAIL }}" && \
