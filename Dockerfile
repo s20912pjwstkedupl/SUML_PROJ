@@ -5,6 +5,8 @@ WORKDIR /app
 COPY . /app
 RUN apt-get update && apt-get -y install git
 RUN rm -rf model/model.pkl
+RUN apt-get update && apt-get -y install git
+RUN rm -rf model/model.pkl
 RUN pip install --no-cache-dir -r requirements.txt
 RUN python train_model.py
 EXPOSE 8501

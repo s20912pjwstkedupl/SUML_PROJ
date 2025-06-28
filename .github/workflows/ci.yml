@@ -20,4 +20,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          push: false
+          push: true
+          tags: ghcr.io/s20912pjwstkedupl/SUML_PROJ:latest
