@@ -21,4 +21,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/s20912pjwstkedupl/SUML_PROJ:latest
+          tags: ghcr.io/s20912pjwstkedupl/suml_proj:latest
