@@ -3,9 +3,12 @@ FROM python:3.10-slim
 WORKDIR /app
 
 COPY . /app
-
+RUN apt-get update && apt-get -y install git
+RUN rm -rf model/model.pkl
 RUN pip install --no-cache-dir -r requirements.txt
 RUN python train_model.py
+RUN git commit -m "Updated model"
+RUN git push origin master
 EXPOSE 8501
 
 CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
