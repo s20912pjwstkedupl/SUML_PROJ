@@ -13,22 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v5
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
         with:
-          python-version: 'pypy3.10'
-
-        name: Install deps
-      - run: |
-          rm -rf model/model.pkl
-          pip install -r requirements.txt --config-settings --confirm-license= --verbose
-
-        name: Train
-      - run: python train_model.py
-
-        name: Publish model
-      - run: | 
-          git config --global user.name "${{ env.USER_NAME }}"
-          git config --global user.email "${{ env.USER_EMAIL }}"
-          it add model/*.pkl
-          git commit -am "Updated model"
-          git push origin master
+          context: .
+          push: false
