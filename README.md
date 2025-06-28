@@ -29,3 +29,6 @@ streamlit run app.py
 ```bash
 docker compose up 
 ```
+
+### Streamlit: 
+https://sumlprojgit-xegbbgowcep2n7ljlmmqsa.streamlit.app/

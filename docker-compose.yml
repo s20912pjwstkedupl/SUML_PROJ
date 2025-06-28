@@ -1,5 +1,5 @@
 services:
   streamlit:
-    build: .
+    image: ghcr.io/s20912pjwstkedupl/suml_proj:latest
     ports:
       - "8501:8501"
