@@ -20,7 +20,7 @@ jobs:
         name: Install deps
       - run: |
           rm -rf model/model.pkl
-          pip install -r requirements.txt
+          pip install -r requirements.txt --config-settings --confirm-license= --verbose
 
         name: Train
       - run: python train_model.py
